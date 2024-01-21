@@ -4,7 +4,7 @@ import { graphql } from "gatsby"
 import PageTemplate from "./page-templates/pageTemplate"
 
 const AboutMe = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata.title;
+  const siteTitle = data.site.siteMetadata.title
 
   return (
     <PageTemplate
@@ -31,13 +31,17 @@ const AboutMe = ({ data, location }) => {
           in local optimum.</p>
         <figure>
           <img src="https://th.bing.com/th/id/OIG.5OCwHMuXihvBT4.Gjwd_?pid=ImgGn" alt="Cute Image" />
-          <figcaption style={{ textAlign: 'center', color: '#888' }} >My most favourite dish</figcaption>
+          <figcaption style={{ textAlign: "center", color: "#888" }}>My most favourite dish</figcaption>
         </figure>
         <h2>About This Site</h2>
         <p>This is the second time I build my personal website. The <anop
           href="https://my-personal-website-git-main-giabaocorn20.vercel.app/">first one</anop> was built by vanilla
-          Next.js...
+          Next.js. However, I found that it is not flexible enough for me to customize the website, and I realized I
+          wanted a static blog rather than a website that's full of UI elements. Therefore, I decided to build my
+          website with GatsbyJS, which is a static site generator based on ReactJS. I also use Github to host my
+          website. The source code of this website is available on my GitHub.
         </p>
+        <p>This website is built to:</p>
         <ul>
           <li>Discuss the mathematics and the technical details of machine learning, deep learning, and computer science
             theories.

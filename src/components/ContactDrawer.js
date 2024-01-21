@@ -6,8 +6,10 @@ import Container from "@mui/material/Container"
 import Drawer from "@mui/material/Drawer"
 import Link from "@mui/material/Link"
 import TextField from "@mui/material/TextField"
-import Typography from "@mui/material/Typography"
+import Typography from "@mui/material/Typography";
+import data from "../data/data.json"
 
+const email = data.profile.email
 export default function ContactDrawer(props) {
   return (
     <Drawer
@@ -46,7 +48,7 @@ export default function ContactDrawer(props) {
               >
                 Have any questions, feedback or want to say hi? Fill the form,
                 or{" "}
-                <Link href="mailto:brianruiz0123@gmail.com" color={"inherit"}>
+                <Link href={`mailto:${email}`} color={"inherit"}>
                   email me
                 </Link>{" "}
                 whenever convenient.
