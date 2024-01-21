@@ -13,7 +13,7 @@ import AlternateEmailOutlinedIcon from "@mui/icons-material/AlternateEmailOutlin
 import HomeIcon from "@mui/icons-material/Home"
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined"
 import SearchIcon from "@mui/icons-material/Search"
-
+import avatar_im from "../images/avatar.png"
 import data from "../data/data.json"
 
 const avatar = data.configs.websiteInfo.avatar
