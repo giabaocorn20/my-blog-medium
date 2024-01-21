@@ -161,7 +161,7 @@ export default function RightDrawer({ isRootPath, ThemeButton }) {
       <Box>
         <Avatar
           alt={avatar.alt}
-          src="../avatar.jpg"
+          src="../avatar.png"
           sx={{ width: 32, height: 32, backgroundColor: "divider" }}
         >
           {avatar.words}

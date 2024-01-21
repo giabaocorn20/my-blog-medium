@@ -161,7 +161,7 @@ const Layout = ({
                       {isRootPath && (
                         <Avatar
                           alt={avatar.alt}
-                          src= "../avatar.jpg"
+                          src= "../avatar.png"
                           sx={{
                             width: 48,
                             height: 48,
