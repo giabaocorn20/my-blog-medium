@@ -1,0 +1,11 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Gatsby dev",
+        "type": "node-terminal",
+        "request": "launch",
+        "command": "nvm use 18; gatsby develop"
+      },
+    ]
+  }

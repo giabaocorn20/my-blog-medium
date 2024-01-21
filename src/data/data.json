@@ -1,0 +1,124 @@
+{
+  "configs": {
+    "websiteInfo": {
+      "title": "Jason Nguyen",
+      "seo_pic": "",
+      "subtitle": "Portfolio, Blog, and Resume",
+      "copyright": "All rights reserved.",
+      "newsleter": "Hey, enjoying the content? Subscribe to my newsletter\n  to stay up to date on new posts and more. P.S. No\n spam, unsubscribe any time.",
+      "avatar": {
+        "url":"../avatar.jpg",
+        "alt": "Cutie Jason",
+        "words": "cutie pie"
+      },
+      "post_detail": {
+        "author": "Jason Nguyen"
+      },
+      "tabs": [
+        {
+          "label": "Blogs",
+          "path": "/"
+        },
+        {
+          "label": "Wishlist",
+          "path": "/wishlist"
+        },
+        {
+          "label": "Contact me",
+          "path": "/links"
+        },
+        {
+          "label": "About me",
+          "path": "/aboutMe"
+        },
+        {
+          "label": "Resume",
+          "path": "/resume"
+        }
+      ]
+    },
+    "settings": {
+      "theme": "light",
+      "language": "en"
+    }
+  },
+
+
+  "links": {
+      "youtube": {
+        "name": "YouTube",
+        "desc": "My videos",
+        "url": "https://www.youtube.com/channel/UCZfD4KQFog3Z-H4hQLQLa2A",
+        "icon": "FaYoutube"
+      },
+      "github": {
+        "name": "GitHub",
+        "desc": "My open-source projects",
+        "url": "https://github.com/giabaocorn20",
+        "icon": "FaGithub"
+      },
+      "linkedin": {
+        "name": "LinkedIn",
+        "desc": "My professional profile",
+        "url": "https://www.linkedin.com/in/jason-nguyen-a97abb194/",
+        "icon": "FaLinkedin"
+      },
+      "instagram": {
+        "name": "Instagram",
+        "desc": "@jabaoo.",
+        "url": "https://www.instagram.com/jabaoo._/",
+        "icon": "FaInstagram"
+      }
+  },
+  "wishlist_desc": "This is my wishlist, I will update it regularly. If you want to support me, you can buy me something from this list. Thank you :)",
+
+  "wishlist": {
+    "Orbitkey Desk Mat": {
+      "category": "Desk Setup",
+      "image": "https://m.media-amazon.com/images/I/61Du63bfnlL._AC_SL1500_.jpg",
+      "desc": "Leather and Recycled PET Felt | Document Hideaway | Magnetic Cable Holder",
+      "stores": {
+        "amazon": {
+          "affiliateLink": "https://amzn.to/3Dm37eu",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png"
+        }
+      }
+    }
+  },
+
+
+
+  "profile": {
+    "name": "Jason Nguyen",
+    "occupation": "Computer Engineering Student at the Toronto Metropolitan University",
+    "bio": "An electrical engineer 👨‍💻, procrastinator 📹, and student 👨‍🎓 living and working in Toronto. You've stumbled onto my online portfolio, resume, blog, and all things in between.",
+    "email": "giabao.corn20@gmail.com"
+  },
+
+  "socials": {
+    "github": {
+      "name": "GitHub",
+      "url": "https://github.com/giabaocorn20",
+      "icon": "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+      "followers": ""
+    },
+    "linkedin": {
+      "name": "LinkedIn",
+      "url": "https://www.linkedin.com/in/jason-nguyen-a97abb194/",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/768px-LinkedIn_logo_initials.png",
+      "followers": "85"
+    },
+    "instagram": {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/jabaoo._/",
+      "icon": "https://johnhoward.on.ca/peterborough/wp-content/uploads/sites/12/2021/03/instagram-logo-svg-vector-for-print.svg",
+      "followers": "286"
+    },
+    "youtube": {
+      "name": "YouTube",
+      "url": "https://www.youtube.com/channel/UCZfD4KQFog3Z-H4hQLQLa2A",
+      "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/YouTube_full-color_icon_%282017%29.svg/768px-YouTube_full-color_icon_%282017%29.svg.png",
+      "followers": "21"
+    }
+  }
+}

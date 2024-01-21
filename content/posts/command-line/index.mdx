@@ -1,0 +1,151 @@
+---
+title: Note About Command Line
+description: Some notes about the command line.
+date: "2024-01-20"
+category: "Technology"
+tags: [ "shell", "command-line", "Python" ]
+featuredImage: "./command-line.jpg"
+pinned: false
+---
+I recently delved into the fascinating world of the Command Line during my computer science course. Here, I share my insights to solidify my understanding and benefit others.
+
+## Table of Contents
+1. [What is an OS](#what-is-an-os)
+2. [Intro on the Command Line](#introduction-on-the-command-line)
+3. [File System](#file-system)
+4. [Modifying the Filesystem](#modifying-the-filesystem)
+5. [Glob patterns and Wildcards](#glob-patterns-and-wildcards)
+6. [User and Permissions](#user-and-permissions)
+7. [File Inspection](#file-inspection)
+8. [Text Processing](#text-processing)
+9. [Redirection and Pipelines](#redirection-and-pipelines)
+10. [Standard Streams and File Descriptors](#standard-streams-and-file-descriptors)
+
+
+Most people interact with computers using graphical user interfaces (GUIs), such as Windows or Mac OS. However, Command Line Interfaces (CLIs) offer a text-based way to interact with machines.
+
+### What is an OS
+
+Operating systems (OS) are crucial for managing hardware and coordinating tasks. They act as the interface between users and applications.
+
+Unix, designed to replace punched cards, introduced a modular design philosophy with simple tools and a shell for command execution.
+
+### Introduction on the Command Line
+
+#### Anatomy of Commands
+
+Commands have a basic structure: `utility_name parameter1 parameter2 ... parameterN`. Options start with a dash (`-`), and arguments are objects on which the command acts.
+
+#### Command history
+
+Interactive command history access allows reusing and modifying commands, enhancing efficiency.
+
+#### Ending Your Session
+
+Terminating a command-line session can be done by closing the terminal window or using the `exit` command.
+
+## File System
+
+A file system organizes files into directories. The working directory is where the terminal's session is located.
+
+### Working Directory
+
+The **current working directory** (cwd) is where the shell is running. Commands like `pwd` and `ls` help navigate and list directory contents.
+
+### Modifying the Filesystem
+
+#### Creating Directories
+
+Use `mkdir` to create directories, following POSIX standards for naming conventions.
+
+#### Deleting Directories
+
+Empty directories can be removed with the `rmdir` command.
+
+#### Copying Files
+
+Copying files with `cp` requires caution to avoid overwriting existing files. Interactive mode (`-i`) can prevent accidental overwrites.
+
+#### Moving and Renaming Directories and Files
+
+The `mv` command efficiently moves and renames files without requiring a recursive flag.
+
+## Glob Patterns and Wildcards
+
+Glob patterns, similar to regular expressions, help match filenames. Wildcards like `*` and `?` facilitate flexible pattern matching.
+
+### The `*` Wildcard
+
+`*` matches any character, any number of times, except for leading dots (`.`).
+
+### Escaping Characters
+
+Use a backslash (`\`) to escape characters' special meanings in glob patterns.
+
+### The Wildcard `[]`
+
+Square brackets allow matching specific characters, providing more control over patterns.
+
+## User and Permissions
+
+### Users
+
+Users have distinct permissions for system security. Commands like `whoami` and `id` reveal user information.
+
+### Groups
+
+Groups categorize users for efficient permission management. The `groups` command lists user groups.
+
+### Permissions
+
+File permissions, applied to owners, groups, and others, control access. The `chmod` command modifies permissions.
+
+### The superuser
+
+The root user, with UID 0, has elevated privileges. `sudo` allows users to execute commands with superuser privileges.
+
+## File Inspection
+
+### Text Files
+
+Text files store data and code. Commands like `head`, `tail`, `wc`, and `file` aid in inspecting and understanding text files.
+
+### Type of Files
+
+Use the `file` command to identify a file's type.
+
+## Text Processing
+
+Text processing involves tasks like reformatting, extracting, and modifying text files. Commands like `cat`, `grep`, and `sed` are powerful tools.
+
+### Concatenate
+
+`cat` concatenates and displays file content. It's commonly used to combine files.
+
+### `Grep`
+
+`grep` searches for patterns in text using regular expressions. It's a versatile tool for filtering content.
+
+## Redirection and Pipelines
+
+Redirection and pipelines enhance command flexibility.
+
+### Redirecting Output with `>`
+
+The `>` operator redirects command output to a file, creating or overwriting the file.
+
+### Redirecting Output with `>>`
+
+The `>>` operator appends command output to a file.
+
+### Pipelines
+
+Pipelines (`|`) connect commands, allowing output from one command to serve as input for another.
+
+## Standard Streams and File Descriptors
+
+Processes communicate through standard streams: stdin, stdout, and stderr.
+
+### Duplicating File Descriptors
+
+`2>&1` duplicates stderr into stdout. Understanding file descriptors helps manage command input and output effectively.
