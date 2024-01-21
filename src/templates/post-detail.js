@@ -251,7 +251,7 @@ const PostDetailTemplate = ({ data, location }) => {
               <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
                 <Avatar
                   alt={avatar.alt}
-                  src={avatar.url}
+                  src={avatar.src}
                   sx={{
                     width: 48,
                     height: 48,

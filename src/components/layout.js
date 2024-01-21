@@ -5,7 +5,7 @@ import useDarkMode from "use-dark-mode"
 import BottomNav from "./BottomNav"
 import PanelLeft from "./PanelLeft"
 import PanelRight from "./PanelRight"
-import CustomTabs from "./CustomTabs"
+
 
 import Avatar from "@mui/material/Avatar"
 import Box from "@mui/material/Box"
@@ -30,7 +30,7 @@ import data from "../data/data.json"
 
 const  websiteInfo = data.configs.websiteInfo
 const avatar = data.configs.websiteInfo.avatar
-const title = data.configs.websiteInfo.newsleter
+
 function ThemeIconButton({ darkModeHook }) {
   return (
     <Tooltip title="Switch theme" placement="right" arrow>
@@ -52,7 +52,6 @@ const Layout = ({
                   extraFooterContent,
                   children,
                 }) => {
-  const [selectedTab, setSelectedTab] = React.useState(0);
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   const darkModeHook = useDarkMode(false)
@@ -161,7 +160,7 @@ const Layout = ({
                       {isRootPath && (
                         <Avatar
                           alt={avatar.alt}
-                          src= "../avatar.png"
+                          src= {avatar.src}
                           sx={{
                             width: 48,
                             height: 48,
@@ -178,7 +177,6 @@ const Layout = ({
                           {avatar.words}
                         </Avatar>
                       )}
-
                       <Typography
                         variant="h2"
                         sx={{
@@ -274,9 +272,7 @@ const Layout = ({
                           variant="body2"
                           sx={{ maxWidth: "330px", color: "text.disabled" }}
                         >
-                          Hey, enjoying the content? Subscribe to my newsletter
-                          to stay up to date on new posts and more. P.S. No
-                          spam, unsubscribe any time.
+                         {data.configs.websiteInfo.newsleter}
                         </Typography>
                       </Box>
                       {extraFooterContent}

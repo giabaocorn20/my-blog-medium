@@ -152,7 +152,7 @@ export default function PanelRight({ extraDrawerContent }) {
                 <Box display={"flex"} gap={2} alignItems={"center"}>
                   <Avatar
                     alt={avatar.alt}
-                    src="../avatar.png"
+                    src={avatar.src}
                     sx={{ width: 64, height: 64, backgroundColor: "divider" }}
                   >
                     {avatar.words}
