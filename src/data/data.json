@@ -11,6 +11,8 @@
         "alt": "Cutie Jason",
         "words": "cutie pie"
       },
+      "user_github_api": "https://api.github.com/users/giabaocorn20",
+      "repo_github_api": "https://api.github.com/repos/giabaocorn20/my-blog-medium",
       "post_detail": {
         "author": "Jason Nguyen"
       },

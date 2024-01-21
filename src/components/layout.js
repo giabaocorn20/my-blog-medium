@@ -30,7 +30,7 @@ import data from "../data/data.json"
 
 const  websiteInfo = data.configs.websiteInfo
 const avatar = data.configs.websiteInfo.avatar
-
+const repo_api = data.configs.websiteInfo.repo_github_api
 function ThemeIconButton({ darkModeHook }) {
   return (
     <Tooltip title="Switch theme" placement="right" arrow>
@@ -105,11 +105,10 @@ const Layout = ({
 
   theme = responsiveFontSizes(theme)
 
-  // get stars and forks from https://api.github.com/repos/BrianRuizy/gatsby-medium-blog
   const [githubStars, setGithubStars] = React.useState(0)
   const [githubForks, setGithubForks] = React.useState(0)
   React.useEffect(() => {
-    fetch("https://api.github.com/repos/BrianRuizy/gatsby-medium-blog")
+    fetch(repo_api)
       .then(res => res.json())
       .then(data => {
           setGithubStars(data.stargazers_count)

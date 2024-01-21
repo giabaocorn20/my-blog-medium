@@ -8,10 +8,11 @@ import Typography from "@mui/material/Typography"
 import data from "../data/data.json"
 
 const profiles = data.socials;
+const github_api = data.configs.websiteInfo.user_github_api;
 const Socials = () => {
   const [gitFollowers, setGitFollowers] = React.useState(0)
   React.useEffect(() => {
-    fetch("https://api.github.com/users/giabaocorn20")
+    fetch(github_api)
       .then(res => res.json())
       .then(data => {
         setGitFollowers(data.followers)
