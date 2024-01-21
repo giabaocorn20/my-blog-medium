@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 module.exports = {
+  pathPrefix: `/my-blog-medium`,
   siteMetadata: {
     title: `Jason Nguyen`,
     author: {
