@@ -108,7 +108,7 @@ const WishlistPage = ({ data, location }) => {
                       ).length
                     } item`
                 }
-              />)
+              />
             </AccordionSummary>
             <AccordionDetails>
               <Grid container spacing={2}>
