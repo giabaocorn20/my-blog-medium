@@ -8,7 +8,7 @@ const CV = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
   const downloadFile = () => {
 
-    const fileUrl = '../assets/Jason_Nguyen.pdf';
+    const fileUrl = '../assets/JasonNguyenCV.pdf';
 
     const link = document.createElement('a');
 
@@ -50,7 +50,7 @@ const CV = ({ data, location }) => {
             <strong>Name:</strong> Bao (Jason)
           </p>
           <p>
-            <strong>Education:</strong> Electrical Engineering, Toronto Metropolitan University (TMU)
+            <strong>Education:</strong> Computer Engineering, Toronto Metropolitan University (TMU)
           </p>
         </div>
         <br />
@@ -120,7 +120,7 @@ const CV = ({ data, location }) => {
           <br />
 
           <div>
-            <h3>Communication Specialist, MetHacks</h3>
+            <h3>MetHacks, Communication specialist</h3>
             <p><strong>Toronto, ON</strong></p>
             <ul>
               <li>Crafted engaging content to share exciting updates and connect with our hackathon community.</li>

@@ -36,6 +36,10 @@
         {
           "label": "Resume",
           "path": "/resume"
+        },
+        {
+          "label": "University Notes",
+          "path": "/notes"
         }
       ]
     },
