@@ -190,7 +190,7 @@ const Layout = ({
                           },
                         }}
                       >
-                        <Link to="https://www.youtube.com/watch?v=q-Y0bnx6Ndw">{title}</Link>
+                        <Link to="/">{title}</Link>
                       </Typography>
                     </Box>
 

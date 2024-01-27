@@ -85,84 +85,84 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   }
 }
-// const algoliasearch = require('algoliasearch');
-// const tagCounts = {};
-// exports.onCreateNode = async ({ node, actions, getNode }) => {
-//   const { createNodeField } = actions;
-//
-//   if (node.internal.type === `Mdx`) {
-//     // Your existing logic for creating the slug
-//     const value = createFilePath({ node, getNode });
-//     createNodeField({
-//       name: `slug`,
-//       node,
-//       value,
-//     });
-//
-//     // Your additional logic for Algolia indexing
-//     if (node.fileAbsolutePath && node.fileAbsolutePath.includes('/posts/')) {
-//       console.log('Node found:', node.fileAbsolutePath);
-//
-//       const isTag = node.frontmatter?.tags && node.frontmatter.tags.length > 0;
-//
-//
-//       const dataToUpload = {
-//         objectID: node.id,
-//         title: node.frontmatter?.title || '',
-//         description: node.frontmatter?.description || '',
-//         date: node.frontmatter?.date || '',
-//         slug: node.fields?.slug || '',
-//       };
-//
-//
-//       // Check if the script is explicitly run (not during Gatsby build).
-//       if (process.env.NODE_ENV === 'development') {
-//
-//         await pushToAlgolia(dataToUpload, "Stories");
-//
-//         // Upload tags separately to the "Tags" index
-//         if (isTag) {
-//           // Count occurrences of each tag
-//           node.frontmatter.tags.forEach(tag => {
-//             tagCounts[tag] = (tagCounts[tag] || 0) + 1;
-//           });
-//
-//
-//           // Create an array of tag objects for Algolia
-//           const tagsToUpload = Object.entries(tagCounts).map(([tag, count]) => ({
-//             objectID: tag,
-//             fieldValue: tag,
-//             totalCount: count,
-//           }));
-//
-//           // Upload tag data to Algolia
-//           await Promise.all(tagsToUpload.map(tagData => pushToAlgolia(tagData, "Tags")));
-//         }
-//
-//       }
-//     }
-//   }
-// };
-//
-// const pushToAlgolia = async (data, indexName) => {
-//   try {
-//     const client = algoliasearch(
-//       process.env.GATSBY_ALGOLIA_APP_ID || '',
-//       process.env.ALGOLIA_ADMIN_KEY || ''
-//     );
-//     console.log('Algolia App ID:', process.env.GATSBY_ALGOLIA_APP_ID);
-//     console.log('Algolia Admin Key:', process.env.ALGOLIA_ADMIN_KEY);
-//
-//     const index = client.initIndex(indexName);
-//
-//     // Push data to Algolia index.
-//     const { objectID } = await index.saveObject(data); // Use objectID instead of objectIDs
-//     console.log('Algolia object saved:', objectID);
-//   } catch (error) {
-//     console.error('Error uploading record to Algolia:', error.message);
-//     console.error('Data to upload:', data);
-//   }
-// };
+const algoliasearch = require('algoliasearch');
+const tagCounts = {};
+exports.onCreateNode = async ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === `Mdx`) {
+    // Your existing logic for creating the slug
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    });
+
+    // Your additional logic for Algolia indexing
+    if (node.fileAbsolutePath && node.fileAbsolutePath.includes('/posts/')) {
+      console.log('Node found:', node.fileAbsolutePath);
+
+      const isTag = node.frontmatter?.tags && node.frontmatter.tags.length > 0;
+
+
+      const dataToUpload = {
+        objectID: node.id,
+        title: node.frontmatter?.title || '',
+        description: node.frontmatter?.description || '',
+        date: node.frontmatter?.date || '',
+        slug: node.fields?.slug || '',
+      };
+
+
+      // Check if the script is explicitly run (not during Gatsby build).
+      if (process.env.NODE_ENV === 'development') {
+
+        await pushToAlgolia(dataToUpload, "Stories");
+
+        // Upload tags separately to the "Tags" index
+        if (isTag) {
+          // Count occurrences of each tag
+          node.frontmatter.tags.forEach(tag => {
+            tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+          });
+
+
+          // Create an array of tag objects for Algolia
+          const tagsToUpload = Object.entries(tagCounts).map(([tag, count]) => ({
+            objectID: tag,
+            fieldValue: tag,
+            totalCount: count,
+          }));
+
+          // Upload tag data to Algolia
+          await Promise.all(tagsToUpload.map(tagData => pushToAlgolia(tagData, "Tags")));
+        }
+
+      }
+    }
+  }
+};
+
+const pushToAlgolia = async (data, indexName) => {
+  try {
+    const client = algoliasearch(
+      process.env.GATSBY_ALGOLIA_APP_ID || '',
+      process.env.ALGOLIA_ADMIN_KEY || ''
+    );
+    console.log('Algolia App ID:', process.env.GATSBY_ALGOLIA_APP_ID);
+    console.log('Algolia Admin Key:', process.env.ALGOLIA_ADMIN_KEY);
+
+    const index = client.initIndex(indexName);
+
+    // Push data to Algolia index.
+    const { objectID } = await index.saveObject(data); // Use objectID instead of objectIDs
+    console.log('Algolia object saved:', objectID);
+  } catch (error) {
+    console.error('Error uploading record to Algolia:', error.message);
+    console.error('Data to upload:', data);
+  }
+};
 
 
 
