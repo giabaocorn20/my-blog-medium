@@ -30,6 +30,9 @@ import Tooltip from "@mui/material/Tooltip"
 
 
 import LinkIcon from "@mui/icons-material/Link"
+import d from "../data/data.json"
+
+const url = d.configs.websiteInfo.url
 
 const ClampTypography = {
   overflow: "hidden",
@@ -171,7 +174,7 @@ const PostDetailTemplate = ({ data, location }) => {
 
   const handleTooltipOpen = () => {
     setOpen(true)
-    navigator.clipboard.writeText(`https://b-r.io${location.pathname}`)
+    navigator.clipboard.writeText(`${url}${location.pathname}`)
     setTimeout(() => {
       setOpen(false)
     }, 700)
