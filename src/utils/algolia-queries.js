@@ -1,3 +1,4 @@
+//THis file is used to create the index for the search bar in the blog (SUPPOSEDLY) not the one in gatsby node
 const escapeStringRegexp = require("escape-string-regexp")
 
 const pagePath = `content/posts`
@@ -66,7 +67,7 @@ const queries = [
   {
     query: pageQueryTags,
     transformer: ({ data }) => data.tags.group.map( tag => (tagToAlgoliaRecord(tag))),
-    indexName2, 
+    indexName: indexName2,
     settings: { attributesToSnippet: [`totalCount`] },
   },
 ]
