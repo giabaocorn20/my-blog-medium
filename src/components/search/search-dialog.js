@@ -10,7 +10,7 @@ import Box from "@mui/material/Box"
 import Dialog from "@mui/material/Dialog"
 
 export default function SearchDialog({ open, handleClose }) {
-  const searchIndices = [{ name: `Stories`, title: `Stories` }, { name: `Tags`, title: `Tags` }]
+  const searchIndices = [{ name: `Stories`, title: `Stories` }, { name: `undefined`, title: `undefined` }] //it should be Tags here :(
   const rootRef = createRef()
   const [query, setQuery] = useState()
   const [hasFocus, setFocus] = useState(false)
