@@ -34,8 +34,8 @@ const AboutMe = ({ data, location }) => {
           <figcaption style={{ textAlign: "center", color: "#888" }}>My most favourite dish</figcaption>
         </figure>
         <h2>About This Site</h2>
-        <p>This is the second time I build my personal website. The <anop
-          href="https://my-personal-website-git-main-giabaocorn20.vercel.app/">first one</anop> was built by vanilla
+        <p>This is the second time I build my personal website. The <a
+          href="https://my-personal-website-git-main-giabaocorn20.vercel.app/">first one</a> was built by vanilla
           Next.js. However, I found that it is not flexible enough for me to customize the website, and I realized I
           wanted a static blog rather than a website that's full of UI elements. Therefore, I decided to build my
           website with GatsbyJS, which is a static site generator based on ReactJS. I also use Github to host my
