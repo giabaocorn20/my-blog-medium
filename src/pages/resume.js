@@ -1,30 +1,11 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, withPrefix } from "gatsby"
 
 import PageTemplate from "./page-templates/pageTemplate"
 import Button from "@mui/material/Button"
 
 const CV = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
-  const downloadFile = () => {
-
-    const fileUrl = '../assets/JasonNguyenCV.pdf';
-
-    const link = document.createElement('a');
-
-    link.download = 'Jason_cv.pdf';
-
-    link.href = fileUrl;
-
-    // Append the link to the document
-    document.body.appendChild(link);
-
-    // Trigger a click event on the link
-    link.click();
-
-    // Remove the link from the document
-    document.body.removeChild(link);
-  }
   return (
     <PageTemplate
       location={location}
@@ -34,12 +15,14 @@ const CV = ({ data, location }) => {
     >
       <div>
         <Button
+          component="a"
+          href={withPrefix("/assets/JasonNguyenCV.pdf")}
+          download="Jason_cv.pdf"
           style={{
             float: 'right',
             marginTop: '10px',
             marginRight: '10px',
           }}
-          onClick={downloadFile}
         >
           Download CV
         </Button>
