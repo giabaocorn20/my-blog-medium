@@ -1,4 +1,6 @@
-require("dotenv").config()
+try {
+  require("dotenv").config()
+} catch (e) {}
 
 module.exports = {
   pathPrefix: `/my-blog-medium`,
@@ -9,7 +11,7 @@ module.exports = {
       summary: ``,
     },
     description: `Jason Nguyen's personal website.`,
-    siteUrl: `https://gatsby-medium.vercel.app/`,
+    siteUrl: `https://giabaocorn20.github.io/my-blog-medium`,
     social: {
       linkedin: ``,
       github: ``,
@@ -180,7 +182,7 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: "b-r.io RSS Feed",
+            title: "Jason Nguyen's Blog",
           },
         ],
       },
@@ -192,7 +194,7 @@ module.exports = {
         short_name: `jason-blog`,
         start_url: `/`,
         background_color: `#121212`,
-        theme_color: `???`,
+        theme_color: `#121212`,
         display: `standalone`,
         icon: "src/images/favicon.png",
         icons : [
@@ -215,13 +217,8 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        queries: require("./src/utils/algolia-queries")
-      },
-    },
+    ...(process.env.GATSBY_ALGOLIA_APP_ID && process.env.ALGOLIA_ADMIN_KEY
+      ? [{ resolve: `gatsby-plugin-algolia`, options: { appId: process.env.GATSBY_ALGOLIA_APP_ID, apiKey: process.env.ALGOLIA_ADMIN_KEY, queries: require("./src/utils/algolia-queries") } }]
+      : []),
   ],
 }
