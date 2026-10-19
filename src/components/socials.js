@@ -8,18 +8,7 @@ import Typography from "@mui/material/Typography"
 import data from "../data/data.json"
 
 const profiles = data.socials;
-const github_api = data.configs.websiteInfo.user_github_api;
 const Socials = () => {
-  const [gitFollowers, setGitFollowers] = React.useState(0)
-  React.useEffect(() => {
-    fetch(github_api)
-      .then(res => res.json())
-      .then(data => {
-        setGitFollowers(data.followers)
-      }
-      )
-  }, [])
-  
   return (
     <Box
       sx={{
@@ -75,7 +64,6 @@ const Socials = () => {
                   </Typography>
                   <Typography variant="body2" sx={{ color: "text.secondary" }}>
                     {profile.followers}
-                    {profile.name === "GitHub" && gitFollowers}
                     {" "}
                     {profile.name === "YouTube" ? "subscribers" : "followers"}
                   </Typography>
