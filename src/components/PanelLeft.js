@@ -133,18 +133,20 @@ export default function RightDrawer({ isRootPath, ThemeButton }) {
             )}
           </IconButton>
         </Tooltip>
-        <React.Fragment>
-          <Tooltip title="Search" placement="right" arrow>
-            <IconButton onClick={handleClickOpen}>
-              <SearchIcon />
-            </IconButton>
-          </Tooltip>
-          <SearchDialog
-            open={open}
-            setOpen={setOpen}
-            handleClose={handleClose}
-          />
-        </React.Fragment>
+        {process.env.GATSBY_ALGOLIA_APP_ID && (
+          <React.Fragment>
+            <Tooltip title="Search" placement="right" arrow>
+              <IconButton onClick={handleClickOpen}>
+                <SearchIcon />
+              </IconButton>
+            </Tooltip>
+            <SearchDialog
+              open={open}
+              setOpen={setOpen}
+              handleClose={handleClose}
+            />
+          </React.Fragment>
+        )}
         <React.Fragment>
           <Tooltip title="Contact" placement="right" arrow>
             <IconButton onClick={toggleDrawer("bottom", true)}>
