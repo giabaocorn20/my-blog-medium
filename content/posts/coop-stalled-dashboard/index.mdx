@@ -3,12 +3,12 @@ title: "Co-op diary #2: the dashboard nobody owned"
 description: Every team has a dashboard everyone opens and nobody owns. I found one whose refresh had stalled, here's how I tracked it down and what I'd do differently.
 date: "2026-10-18"
 category: "Blogging"
-tags: [ "co-op", "data", "power-bi", "debugging" ]
-featuredImage: "./stalled-dashboard.png"
+tags: [ "co-op", "data", "power-bi", "debugging", "meme" ]
+featuredImage: "./featured.jpg"
 pinned: false
 ---
 
-Hello again! This is part 2 of my co-op diary. Today's story is about a dashboard that everyone looked at and nobody owned.
+Hello again! This is part 2 of my co-op diary. Today's story is about a dashboard that everyone looked at and nobody owned (╥﹏╥)
 
 ## The problem with "it's always been there"
 
@@ -18,7 +18,7 @@ Then one day I noticed the numbers in it hadn't moved. The refresh had stalled. 
 
 > A dashboard that errors out gets fixed quickly. A dashboard that quietly shows old numbers can sit there looking perfectly healthy.
 
-Stale is worse than broken, because broken is loud.
+Stale is worse than broken, because broken is loud. Stale is just vibing.
 
 ## How I tracked it down
 
@@ -29,7 +29,11 @@ The exact culprit matters less than the process, and the process is basically de
 3. **Work upstream.** Check the dashboard, then the dataset, then whatever feeds it. Same as probing a circuit stage by stage until you find where the signal dies.
 4. **Fix it, run it, and verify.** A green checkmark isn't enough. I compared the refreshed numbers against the source to make sure they agreed.
 
-![Before and after the fix](./refresh-chain.png)
+At some point there's a moment where you have two options, and I'll let the meme explain how that felt:
+
+![Fix the refresh or pretend nobody noticed](./inline.jpg)
+
+(I fixed it. Obviously. Please don't tell the meme.)
 
 ## The part that mattered more than the fix
 
@@ -41,4 +45,4 @@ Getting the refresh running again took a bit of detective work. Making sure it n
 
 I'm a perfectionist, so I wanted to do more. But I've learned that a small fix plus an owner beats a perfect fix nobody maintains.
 
-Next up, [part 3](/my-blog-medium/coop-powerbi-refactor/): the big dataset with over 200 queries. Thanks for reading!
+Next up, [part 3](/my-blog-medium/coop-powerbi-refactor/): the big dataset with over 200 queries. Thanks for reading! ٩(◕‿◕)۶
